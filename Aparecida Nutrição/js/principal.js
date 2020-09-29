@@ -23,6 +23,7 @@ for (var i = 0; i < pacientes.length; i++) {
 		console.log("Peso inválido");
 		pesoValido = false;
 		tdPeso.textContent = "Peso inválido";
+		paciente.classList.add("paciente-invalido"); //inserindo a nova classe que troca a cor de fundo em caso de dado invalido
 	}
 
 	if (altura <= 0 || altura >= 3.00) {
@@ -30,6 +31,7 @@ for (var i = 0; i < pacientes.length; i++) {
 		console.log("Altura inválida");
 		alturaValida = false;
 		tdAltura.textContent = "Altura inválida";
+		paciente.classList.add("paciente-invalido");
 	}
 
 	if (pesoValido && alturaValida) {
