@@ -1,95 +1,41 @@
 var titulo = document.querySelector('.titulo');
 titulo.textContent = "Aparecida Nutricionista";
 
-var paciente = document.querySelector("#primeiro-paciente"); //acessando as informações do paciente
+var pacientes = document.querySelectorAll(".paciente");
 
-var tdPeso = paciente.querySelector(".info-peso"); //puxando a informação de peso
-var peso = tdPeso.textContent;
+for (var i = 0; i < pacientes.length; i++) {
 
-var tdAltura = paciente.querySelector(".info-altura"); //puxando a informação da altura
-var altura = tdAltura.textContent;
+	var paciente = pacientes[i];
 
-var tdImc = paciente.querySelector(".info-imc"); //puxando a informação do imc
+	var tdPeso = paciente.querySelector(".info-peso"); //puxando a informação de peso
+	var peso = tdPeso.textContent;
 
-var pesoValido = true;
-var alturaValida = true;
+	var tdAltura = paciente.querySelector(".info-altura"); //puxando a informação da altura
+	var altura = tdAltura.textContent;
 
-if (peso <= 0 || peso >= 1000) {
+	var tdImc = paciente.querySelector(".info-imc"); //puxando a informação do imc
 
-	console.log("Peso inválido");
-	pesoValido = false;
-	tdPeso.textContent = "Peso inválido";
+	var pesoValido = true;
+	var alturaValida = true;
+
+	if (peso <= 0 || peso >= 1000) {
+
+		console.log("Peso inválido");
+		pesoValido = false;
+		tdPeso.textContent = "Peso inválido";
+	}
+
+	if (altura <= 0 || altura >= 3.00) {
+
+		console.log("Altura inválida");
+		alturaValida = false;
+		tdAltura.textContent = "Altura inválida";
+	}
+
+	if (pesoValido && alturaValida) {
+
+		var imc = peso / (altura * altura);
+		tdImc.textContent = imc.toFixed(2); //alterando o valor do imc na tabela .toFixed(2) ajusta para 2 casas decimais
+	}
+
 }
-
-if (altura <= 0 || altura >= 3.00) {
-
-	console.log("Altura inválida");
-	alturaValida = false;
-	tdAltura.textContent = "Altura inválida";
-}
-
-if (pesoValido && alturaValida) {
-
-	var imc = peso / (altura * altura);
-	tdImc.textContent = imc; //alterando o valor do imc na tabela
-}
-
-//Segundo paciente
-
-var paciente = document.querySelector("#segundo-paciente");
-
-var tdPeso = paciente.querySelector(".info-peso");
-var peso = tdPeso.textContent;
-
-var tdAltura = paciente.querySelector(".info-altura");
-var altura = tdAltura.textContent;
-
-var imc = peso / (altura * altura);
-
-var tdImc = paciente.querySelector(".info-imc");
-tdImc.textContent = imc;
-
-//Terceiro paciente
-
-var paciente = document.querySelector("#terceiro-paciente");
-
-var tdPeso = paciente.querySelector(".info-peso");
-var peso = tdPeso.textContent;
-
-var tdAltura = paciente.querySelector(".info-altura");
-var altura = tdAltura.textContent;
-
-var imc = peso / (altura * altura);
-
-var tdImc = paciente.querySelector(".info-imc");
-tdImc.textContent = imc;
-
-//Quarto paciente
-
-var paciente = document.querySelector("#quarto-paciente");
-
-var tdPeso = paciente.querySelector(".info-peso");
-var peso = tdPeso.textContent;
-
-var tdAltura = paciente.querySelector(".info-altura");
-var altura = tdAltura.textContent;
-
-var imc = peso / (altura * altura);
-
-var tdImc = paciente.querySelector(".info-imc");
-tdImc.textContent = imc;
-
-//Quinto paciente
-
-var paciente = document.querySelector("#quinto-paciente");
-
-var tdPeso = paciente.querySelector(".info-peso");
-var peso = tdPeso.textContent;
-
-var tdAltura = paciente.querySelector(".info-altura");
-var altura = tdAltura.textContent;
-
-var imc = peso / (altura * altura);
-
-var tdImc = paciente.querySelector(".info-imc");
-tdImc.textContent = imc;
