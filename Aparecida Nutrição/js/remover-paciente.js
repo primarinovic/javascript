@@ -2,10 +2,20 @@ var tabela = document.querySelector("table");
 
 tabela.addEventListener("dblclick", function (event) {
 
-    var alvoEvento = event.target;
-    var paiDoAlvo = alvoEvento.parentNode; // TR = paciente
+    event.target.parentNode.classList.add('fadeOut'); // esmaecer qdo clicar para apagar
 
-    paiDoAlvo.remove();
+    // espera 0.5s para remover
+    setTimeout(function () {
+
+        event.target.parentNode.remove();
+    }, 500);
+
+
+
+    //var alvoEvento = event.target;
+    //var paiDoAlvo = alvoEvento.parentNode; // TR = paciente
+
+    //paiDoAlvo.remove();
 });
 
 
