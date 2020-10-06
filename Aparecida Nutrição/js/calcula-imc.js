@@ -15,10 +15,10 @@ for (var i = 0; i < pacientes.length; i++) {
 
 	var tdImc = paciente.querySelector(".info-imc"); //puxando a informação do imc
 
-	var pesoValido = true;
-	var alturaValida = true;
+	var pesoValido = validaPeso(peso);
+	var alturaValida = validaAltura(altura);
 
-	if (peso <= 0 || peso >= 1000) {
+	if (!pesoValido) { // quando o peso não for válido, entra no if
 
 		console.log("Peso inválido");
 		pesoValido = false;
@@ -26,7 +26,7 @@ for (var i = 0; i < pacientes.length; i++) {
 		paciente.classList.add("paciente-invalido"); //inserindo a nova classe que troca a cor de fundo em caso de dado invalido
 	}
 
-	if (altura <= 0 || altura >= 3.00) {
+	if (!validaAltura) {
 
 		console.log("Altura inválida");
 		alturaValida = false;
@@ -42,11 +42,35 @@ for (var i = 0; i < pacientes.length; i++) {
 
 }
 
+function validaPeso(peso) {
+
+	if (peso >= 0 && peso < 1000) {
+
+		return true;
+	} else {
+
+		return false;
+	}
+}
+
+function validaAltura(altura) {
+
+	if (altura >= 0 && altura <= 3.00) {
+
+		return true;
+	} else {
+
+		return false;
+	}
+}
+
 function calculaImc(peso, altura) {
 
 	var imc = 0;
 	imc = peso / (altura * altura);
 	return imc.toFixed(2); //.toFixed(2) ajusta para 2 casas decimais
 }
+
+
 
 
