@@ -110,7 +110,7 @@ function exiberMensagensDeErro(erros) {
     var ul = document.querySelector("#mensagens-erro");
 
     ul.innerHTML = ""; //apaga os li dps q corrige os dados
-    erros.forEach(function (erro) {
+    erros.forEach(function (erro) { //tipo diferente de loop for
 
         var li = document.createElement("li");
         li.textContent = erro;
