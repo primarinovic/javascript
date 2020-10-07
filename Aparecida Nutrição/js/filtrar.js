@@ -11,7 +11,9 @@ campoFiltro.addEventListener("input", function () {
             var paciente = pacientes[i];
             var tdNome = paciente.querySelector(".info-nome");
             var nome = tdNome.textContent;
-            if (nome != this.value) {
+            // busca letra a letra ao inves de pelo nome completo
+            var expressao = new RegExp(this.value, "i"); // i = case insensitive-> letras maisuculas ou minusculas
+            if (!expressao.test(nome)) {
                 paciente.classList.add("invisivel");
             } else {
                 paciente.classList.remove("invisivel");
