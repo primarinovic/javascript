@@ -7,9 +7,6 @@ botaoAdicionar.addEventListener('click', function (event) {   //addEventListener
     // Pegando as infos do paciente no form
     var paciente = obtemInfoDoForm(form);
 
-    // Cria td e tr do paciente
-    var pacienteTr = montaTr(paciente);
-
     var erros = validaPaciente(paciente);
     console.log(erros);
 
@@ -20,10 +17,7 @@ botaoAdicionar.addEventListener('click', function (event) {   //addEventListener
         return;
     }
 
-    // adicionando o paciente na tabela
-    var tabela = document.querySelector('#tabela-pacientes');
-
-    tabela.appendChild(pacienteTr);
+    adicionaPacienteNaTabela(paciente);
 
     form.reset(); //limpa o formulario dps q enviado
 
@@ -116,4 +110,12 @@ function exiberMensagensDeErro(erros) {
         li.textContent = erro;
         ul.appendChild(li);
     });
+}
+
+function adicionaPacienteNaTabela(paciente) {
+
+    var pacienteTr = montaTr(paciente);
+    var tabela = document.querySelector('#tabela-pacientes');
+    tabela.appendChild(pacienteTr);
+
 }
