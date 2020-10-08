@@ -4,22 +4,21 @@ botaoAdicionar.addEventListener("click", function () {
 
     console.log("Buscando...");
 
-    //AJAX requisição com o js de modo assíncrono
-
     var xhr = new XMLHttpRequest(); //responsável por fazer as requisições
 
-    xhr.open("GET", "http://api-pacientes.herokuapp.com/pacientes111");
+    xhr.open("GET", "http://api-pacientes.herokuapp.com/pacientes");
 
     xhr.addEventListener("load", function () {
 
+        var erroAjax = document.querySelector("#erro-ajax");
+
         if (xhr.status == 200) {
 
+            erroAjax.classList.add("invisivel");
             var resposta = xhr.responseText;
-            console.log(resposta);
-            console.log(typeof resposta);
             var pacientes = JSON.parse(resposta);
 
-            pacientes.forEach(paciente => {
+            pacientes.forEach(function (paciente) {
 
                 adicionaPacienteNaTabela(paciente);
             });
@@ -27,12 +26,11 @@ botaoAdicionar.addEventListener("click", function () {
 
             console.log(xhr.status);
             console.log(xhr.responseText);
+            erroAjax.classList.remove("invisivel");
         }
-
-
-
-        xhr.send();
-
     });
+
+    xhr.send();
+
 
 });

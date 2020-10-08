@@ -158,4 +158,10 @@ button[disabled=disabled], button:disabled {
 .invisivel {
 
 	display: none;
+	
+}
+
+#erro-ajax {
+
+	color: tomato;
 }
