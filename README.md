@@ -1,9 +1,12 @@
 # Javascript
- Estudo de Javascript
 
- Aprofundando conhecimentos no JS através do curso da Oracle ONE na Alura.
+## Projeto "Aparecida Nutrição"
 
- Módulo - JavaScript: Programando na linguagem da web
+---
+ 
+ Aprofundando conhecimentos no JS através do curso da **Oracle ONE na Alura**.
 
- Projeto "Aparecida Nutrição"
+ *Módulo - JavaScript: Programando na linguagem da web*
+
+ 
  
